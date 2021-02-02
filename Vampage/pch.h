@@ -6,6 +6,7 @@
 #include <map>
 #include <string>
 #include <ctime>
+#include <memory>
 
 #include "SFML/System.hpp"
 #include "SFML/Window.hpp"

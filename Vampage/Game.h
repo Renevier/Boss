@@ -1,18 +1,20 @@
 #pragma once
 #include "Player.h"
-#include <memory>
+#include "Boss.h"
 
 class Game
 {
 private:
-	RenderWindow window;
+	RenderWindow* window;
 	Event event;
 
 	unique_ptr<Player> player;
+	unique_ptr<Boss> boss;
 
 private:
 	void InitWindow();
 	void InitPlayer();
+	void InitBoss();
 
 public:
 	Game();
@@ -21,10 +23,12 @@ public:
 
 	void Update();
 	void UpdatePlayer();
+	void UpdateBoss();
 
 	void Render();
 	void RenderPlayer();
+	void RenderBoss();
 
-	inline const RenderWindow& GetWindow() const { return this->window; }
+	inline const RenderWindow& GetWindow() const { return *this->window; }
 };
 

@@ -25,6 +25,12 @@
     <Filter Include="Classes\Entity\Player">
       <UniqueIdentifier>{3dcc2e11-820f-4a26-9279-885d8727ad17}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Entity\Boss">
+      <UniqueIdentifier>{109075fe-b731-4d9f-bd67-563bdb4d27e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entity\Shockwave">
+      <UniqueIdentifier>{4ed166ea-e9ce-49a3-910c-f21c9dd285ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -42,6 +48,9 @@
     <ClCompile Include="Player.cpp">
       <Filter>Classes\Entity\Player</Filter>
     </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>Classes\Entity\Boss</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -55,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Classes\Entity\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>Classes\Entity\Boss</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

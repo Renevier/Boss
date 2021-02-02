@@ -4,19 +4,14 @@
 class Player: public Entity
 {
 private:
-	RectangleShape shape;
-
 
 private:
-	void InitShape();
 
 public:
-	Player();
+	Player(RenderWindow* _window, float _width, float _height, float _posX, float _posY);
 	~Player(); 
 
-	void Update();
-	void UpdateMovement();
+	virtual void Move();
 
-	void Render(RenderTarget& _target);
 };
 

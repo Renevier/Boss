@@ -1,39 +1,26 @@
 #include "pch.h"
 #include "Player.h"
 
-void Player::InitShape()
+Player::Player(RenderWindow* _window, float _width, float _height, float _posX, float _posY)
+	:Entity(_window, _width, _height, _posX, _posY)
 {
-	this->shape.setPosition(Vector2f(100.f, 100.f));
-	this->shape.setSize(Vector2f(50.f, 50.f));
-}
 
-Player::Player()
-{
-	this->InitShape();
-	this->InitPhysics();
 }
 
 Player::~Player()
 {
 }
 
-void Player::Update()
+void Player::Move()
 {
-	this->UpdateMovement();
-	this->UpdateGravity();
+	Entity::Move();
 
-	this->shape.setPosition(Vector2f(this->velocity.x, this->velocity.y));
-}
-
-void Player::UpdateMovement()
-{
 	if (Keyboard::isKeyPressed(Keyboard::Key::Q))
-		this->velocity.x += -5.f;
-	else if(Keyboard::isKeyPressed(Keyboard::Key::D))
-		this->velocity.x += 5.f;
-}
+		this->velocity.x -= 0.5f;
+	
+	if(Keyboard::isKeyPressed(Keyboard::Key::D))
+		this->velocity.x += 0.5f;
 
-void Player::Render(RenderTarget& _target)
-{
-	_target.draw(this->shape);
+	/*if (Keyboard::isKeyPressed(Keyboard::Key::Space))
+		this->shape.move(0, -50);*/
 }
