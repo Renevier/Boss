@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{d09bdcfc-19b2-46ef-84e9-8e929310e07a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Game">
+      <UniqueIdentifier>{12a928f6-7fc5-47ea-9e31-27a1c1c553bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entity">
+      <UniqueIdentifier>{3f250d05-0e55-4b7b-b22f-85c8c830fa2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entity\Player">
+      <UniqueIdentifier>{3dcc2e11-820f-4a26-9279-885d8727ad17}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -22,10 +34,13 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Classes\Entity</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Classes\Entity\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -33,10 +48,13 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Classes\Entity</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Classes\Entity\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

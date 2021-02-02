@@ -9,7 +9,7 @@ void Game::InitWindow()
 
 void Game::InitPlayer()
 {
-	this->player = new Player();
+	this->player = make_unique<Player>();
 }
 
 Game::Game()
@@ -20,7 +20,6 @@ Game::Game()
 
 Game::~Game()
 {
-	delete this->player;
 }
 
 void Game::Update()

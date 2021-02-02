@@ -1,5 +1,6 @@
 #pragma once
 #include "Player.h"
+#include <memory>
 
 class Game
 {
@@ -7,7 +8,7 @@ private:
 	RenderWindow window;
 	Event event;
 
-	Player* player;
+	unique_ptr<Player> player;
 
 private:
 	void InitWindow();

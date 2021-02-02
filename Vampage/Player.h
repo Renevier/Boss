@@ -1,14 +1,14 @@
 #pragma once
-class Player
+#include "Entity.h"
+
+class Player: public Entity
 {
 private:
 	RectangleShape shape;
 
-	Vector2f velocity;
 
 private:
 	void InitShape();
-	void InitPhysics();
 
 public:
 	Player();
@@ -16,7 +16,6 @@ public:
 
 	void Update();
 	void UpdateMovement();
-	void UpdateGravity();
 
 	void Render(RenderTarget& _target);
 };
