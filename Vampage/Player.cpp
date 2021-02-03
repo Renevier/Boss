@@ -4,7 +4,7 @@
 Player::Player(RenderWindow* _window, float _width, float _height, float _posX, float _posY)
 	:Entity(_window, _width, _height, _posX, _posY)
 {
-
+	this->shape.setFillColor(Color::Blue);
 }
 
 Player::~Player()
@@ -13,14 +13,14 @@ Player::~Player()
 
 void Player::Move()
 {
-	Entity::Move();
-
 	if (Keyboard::isKeyPressed(Keyboard::Key::Q))
-		this->velocity.x -= 0.5f;
+		this->velocity.x += -this->movementSpeed;
 	
 	if(Keyboard::isKeyPressed(Keyboard::Key::D))
-		this->velocity.x += 0.5f;
+		this->velocity.x += this->movementSpeed;
 
-	/*if (Keyboard::isKeyPressed(Keyboard::Key::Space))
-		this->shape.move(0, -50);*/
+	if (Keyboard::isKeyPressed(Keyboard::Key::Space))
+		this->velocity.y += -this->movementSpeed;
+
+	Entity::Move();
 }

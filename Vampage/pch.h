@@ -7,6 +7,8 @@
 #include <string>
 #include <ctime>
 #include <memory>
+#include <math.h>
+#include <chrono>
 
 #include "SFML/System.hpp"
 #include "SFML/Window.hpp"

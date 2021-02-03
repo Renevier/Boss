@@ -4,9 +4,11 @@ class Entity
 protected:
 	RenderWindow* window;
 
-	Vector2f pos;
+	float movementSpeed;
 	Vector2f velocity;
 	RectangleShape shape;
+
+	int hp;
 
 protected:
 	void InitShape(float _width, float _height, float _posX, float _posY);
@@ -18,7 +20,7 @@ public:
 
 	virtual void Update();
 	virtual void Move();
-	void UpdateGravity();
+	virtual void UpdateGravity();
 
-	void Render(RenderTarget& _target);
+	virtual void Render(RenderTarget& _target);
 };

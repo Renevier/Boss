@@ -12,6 +12,5 @@ public:
 	~Player(); 
 
 	virtual void Move();
-
 };
 

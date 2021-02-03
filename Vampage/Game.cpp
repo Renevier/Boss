@@ -5,11 +5,12 @@ void Game::InitWindow()
 {
 	this->window = new RenderWindow(VideoMode(800, 600), "Boss");
 	this->window->setFramerateLimit(144);
+
 }
 
 void Game::InitPlayer()
 {
-	this->player = make_unique<Player>(this->window, 50, 50, 100, 100);
+	//this->player = make_unique<Player>(this->window, 50, 50, 100, 100);
 }
 
 void Game::InitBoss()
@@ -31,6 +32,12 @@ Game::~Game()
 
 void Game::Update()
 {
+	auto lastFrame = std::chrono::high_resolution_clock::now();
+
+	const auto now = std::chrono::high_resolution_clock::now();
+	const auto dt = now - lastFrame;
+	lastFrame = now;
+
 	while (this->window->pollEvent(this->event))
 	{
 		if (this->event.type == Event::Closed)
@@ -39,7 +46,7 @@ void Game::Update()
 			this->window->close();
 	}
 
-	this->UpdatePlayer();
+	//this->UpdatePlayer();
 	this->UpdateBoss();
 }
 
@@ -58,7 +65,7 @@ void Game::Render()
 	this->window->clear();
 
 
-	this->RenderPlayer();
+	//this->RenderPlayer();
 	this->RenderBoss();
 
 

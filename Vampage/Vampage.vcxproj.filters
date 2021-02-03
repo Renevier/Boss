@@ -51,6 +51,9 @@
     <ClCompile Include="Boss.cpp">
       <Filter>Classes\Entity\Boss</Filter>
     </ClCompile>
+    <ClCompile Include="Shockwave.cpp">
+      <Filter>Classes\Entity\Shockwave</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -67,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="Boss.h">
       <Filter>Classes\Entity\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="Shockwave.h">
+      <Filter>Classes\Entity\Shockwave</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
