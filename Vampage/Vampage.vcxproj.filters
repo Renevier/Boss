@@ -31,6 +31,9 @@
     <Filter Include="Classes\Entity\Shockwave">
       <UniqueIdentifier>{4ed166ea-e9ce-49a3-910c-f21c9dd285ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Entity\Ray">
+      <UniqueIdentifier>{5182b41f-6ee2-4062-8947-c059cd3ab03b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -54,6 +57,9 @@
     <ClCompile Include="Shockwave.cpp">
       <Filter>Classes\Entity\Shockwave</Filter>
     </ClCompile>
+    <ClCompile Include="Ray.cpp">
+      <Filter>Classes\Entity\Ray</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -73,6 +79,9 @@
     </ClInclude>
     <ClInclude Include="Shockwave.h">
       <Filter>Classes\Entity\Shockwave</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray.h">
+      <Filter>Classes\Entity\Ray</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

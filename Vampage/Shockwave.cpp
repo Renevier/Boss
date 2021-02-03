@@ -14,7 +14,6 @@ void Shockwave::Move()
 	this->velocity += Vector2f(.2f, 0.f);
 
 	Entity::Move();
-	Entity::UpdateGravity();
 }
 
 void Shockwave::MoveInv()
@@ -22,5 +21,4 @@ void Shockwave::MoveInv()
 	this->velocity -= Vector2f(.2f, 0.f);
 
 	Entity::Move();
-	Entity::UpdateGravity();
 }

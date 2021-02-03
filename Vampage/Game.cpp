@@ -15,7 +15,7 @@ void Game::InitPlayer()
 
 void Game::InitBoss()
 {
-	this->boss = make_unique<Boss>(this->window, 100, 100, 350, 200);
+	this->boss = make_unique<Boss>(this->window, 100, 100, this->window->getSize().x / 2, this->window->getSize().y - 50);
 }
 
 Game::Game()
@@ -32,12 +32,6 @@ Game::~Game()
 
 void Game::Update()
 {
-	auto lastFrame = std::chrono::high_resolution_clock::now();
-
-	const auto now = std::chrono::high_resolution_clock::now();
-	const auto dt = now - lastFrame;
-	lastFrame = now;
-
 	while (this->window->pollEvent(this->event))
 	{
 		if (this->event.type == Event::Closed)
