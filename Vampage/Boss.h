@@ -1,5 +1,6 @@
 #pragma once
 #include "Entity.h"
+#include "Player.h"
 #include "Shockwave.h"
 #include "Ray.h"
 
@@ -10,12 +11,13 @@ class Boss :
     vector<unique_ptr<Ray>> rayVector;
 
     Clock clock;
-    Time time;
+    Time timeBeetwenWaves;
 
 public:
     Boss(RenderWindow* _window, float _width, float _height, float _posX, float _posY);
     ~Boss();
 
+    void UpdateShockwaves();
     virtual void Update();
     virtual void Move();
 

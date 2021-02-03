@@ -1,6 +1,10 @@
 #include "pch.h"
 #include "Player.h"
 
+Player::Player()
+{
+}
+
 Player::Player(RenderWindow* _window, float _width, float _height, float _posX, float _posY)
 	:Entity(_window, _width, _height, _posX, _posY)
 {

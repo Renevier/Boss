@@ -10,7 +10,7 @@ void Game::InitWindow()
 
 void Game::InitPlayer()
 {
-	//this->player = make_unique<Player>(this->window, 50, 50, 100, 100);
+	this->player = make_unique<Player>(this->window, 50, 50, 100, 100);
 }
 
 void Game::InitBoss()
@@ -40,7 +40,7 @@ void Game::Update()
 			this->window->close();
 	}
 
-	//this->UpdatePlayer();
+	this->UpdatePlayer();
 	this->UpdateBoss();
 }
 
@@ -59,7 +59,7 @@ void Game::Render()
 	this->window->clear();
 
 
-	//this->RenderPlayer();
+	this->RenderPlayer();
 	this->RenderBoss();
 
 

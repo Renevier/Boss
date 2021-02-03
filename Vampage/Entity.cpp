@@ -16,6 +16,10 @@ void Entity::InitPhysics()
 	this->velocity = Vector2f(0, 0);
 }
 
+Entity::Entity()
+{
+}
+
 Entity::Entity(RenderWindow* _window, float _width, float _height, float _posX, float _posY)
 {
 	this->window = _window;

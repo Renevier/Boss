@@ -15,6 +15,7 @@ protected:
 	void InitPhysics();
 
 public:
+	Entity();
 	Entity(RenderWindow* _window, float _width, float _height, float _posX, float _posY);
 	~Entity();
 
