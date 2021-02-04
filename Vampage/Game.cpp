@@ -15,7 +15,7 @@ void Game::InitPlayer()
 
 void Game::InitBoss()
 {
-	this->boss = make_unique<Boss>(this->window, 100, 100, this->window->getSize().x / 2, this->window->getSize().y - 100);
+	this->boss = make_unique<Boss>(this->window, 100, 100, this->window->getSize().x / 2, this->window->getSize().y - 50, this->player->GetPos());
 }
 
 Game::Game()

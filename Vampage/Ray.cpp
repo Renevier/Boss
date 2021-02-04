@@ -13,6 +13,11 @@ Ray::~Ray()
 {
 }
 
+void Ray::Update()
+{
+	this->shape.setSize(Vector2f(this->shape.getSize().x, this->window->getSize().y));
+}
+
 void Ray::Move()
 {
 	this->velocity += Vector2f(10.f, 0.f);

@@ -13,5 +13,6 @@ public:
 	virtual void Move();
 	virtual void MoveInv();
 
-	inline const FloatRect& GetPos() const { return this->shape.getGlobalBounds(); }
+	inline const Vector2f& GetPos() const { return this->shape.getPosition(); }
+	inline const FloatRect& GetBounds() const { return this->shape.getGlobalBounds(); }
 };
