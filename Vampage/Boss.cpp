@@ -5,7 +5,7 @@ Boss::Boss(RenderWindow* _window, float _width, float _height, float _posX, floa
 	:Entity(_window, _width, _height, _posX, _posY)
 {
 	this->shape.setFillColor(Color::Red);
-	this->hp = 50;
+	this->hp = 100;
 }
 
 Boss::~Boss()
@@ -71,9 +71,16 @@ void Boss::ShockwavesPattern()
 
 void Boss::RayPattern()
 {
+	Ray* temp = new Ray();
+
 	if (rayVector.size() < 4)
 	{
-		this->rayVector.push_back(make_unique<Ray>(this->window, 50, 5, 0,
+		this->rayVector.push_back(make_unique<Ray>(this->window, 200, 5,
+			this->shape.getPosition().x + this->shape.getGlobalBounds().width / 2 + temp->GetBounds().width / 2 + 1,
+			this->window->getSize().y - 2.5));
+
+		this->rayVector.push_back(make_unique<Ray>(this->window, 200, 5,
+			this->shape.getPosition().x - this->shape.getGlobalBounds().width / 2 - temp->GetBounds().width / 2 - 1,
 			this->window->getSize().y - 2.5));
 	}
 }

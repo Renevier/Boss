@@ -15,7 +15,7 @@ void Game::InitPlayer()
 
 void Game::InitBoss()
 {
-	this->boss = make_unique<Boss>(this->window, 100, 100, this->window->getSize().x / 2, this->window->getSize().y - 50);
+	this->boss = make_unique<Boss>(this->window, 100, 100, this->window->getSize().x / 2, this->window->getSize().y - 100);
 }
 
 Game::Game()
@@ -32,16 +32,16 @@ Game::~Game()
 
 void Game::Update()
 {
+	this->UpdatePlayer();
+	this->UpdateBoss();
+
 	while (this->window->pollEvent(this->event))
 	{
 		if (this->event.type == Event::Closed)
 			this->window->close();
 		else if(this->event.type == Event::KeyPressed && this->event.key.code == Keyboard::Escape)
 			this->window->close();
-	}
-
-	this->UpdatePlayer();
-	this->UpdateBoss();
+	}	
 }
 
 void Game::UpdatePlayer()

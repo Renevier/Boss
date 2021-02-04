@@ -62,7 +62,7 @@ void Entity::UpdateGravity()
 	if (this->shape.getPosition().x + this->shape.getGlobalBounds().width > this->window->getSize().x)
 	{
 		this->shape.setPosition(
-			this->window->getSize().x - this->shape.getGlobalBounds().width,
+			this->window->getSize().x - this->shape.getGlobalBounds().width / 2,
 			this->shape.getPosition().y
 		);
 	}
@@ -70,7 +70,7 @@ void Entity::UpdateGravity()
 	if (this->shape.getPosition().x <= 0.f)
 	{
 		this->shape.setPosition(
-			0,
+			0 + this->shape.getGlobalBounds().width / 2,
 			this->shape.getPosition().y
 		);
 	}

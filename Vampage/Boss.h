@@ -17,11 +17,13 @@ public:
     Boss(RenderWindow* _window, float _width, float _height, float _posX, float _posY);
     ~Boss();
 
-    void UpdateShockwaves();
     virtual void Update();
     virtual void Move();
 
+    void UpdateShockwaves();
     void ShockwavesPattern();
+
+    void UpdateRayPattern();
     void RayPattern();
 
     void RenderSockwaves();
