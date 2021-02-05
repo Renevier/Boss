@@ -3,7 +3,7 @@
 
 void Game::InitWindow()
 {
-	this->window = new RenderWindow(VideoMode(1900, 1080), "Boss");
+	this->window = new RenderWindow(VideoMode(1200, 800), "Boss");
 	this->window->setFramerateLimit(144);
 
 }

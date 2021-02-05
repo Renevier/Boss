@@ -7,6 +7,7 @@ Boss::Boss(RenderWindow* _window, float _width, float _height, float _posX, floa
 	this->shape.setFillColor(Color::Red);
 	this->hp = 100;
 	this->playerPos = _playerPos;
+	this->movementSpeed = .5f;
 }
 
 Boss::~Boss()
@@ -16,6 +17,8 @@ Boss::~Boss()
 
 void Boss::Update()
 {
+	this->Move();
+
 	this->timeBeetwenWaves = clockWaves.getElapsedTime();
 	this->timeBeetwenRay = clockRay.getElapsedTime();
 
@@ -37,9 +40,19 @@ void Boss::Update()
 
 void Boss::Move()
 {
-	Entity::Move();
+	this->Follow();
 
-	//Follow player
+	Entity::Move();
+}
+
+void Boss::Follow()
+{
+	this->direction = *this->playerPos - this->shape.getPosition();
+
+	this->normailizeDir.x = this->direction.x / sqrt(pow(this->direction.x, 2) + pow(this->direction.y, 2));
+	this->normailizeDir.y = 0; // this->direction.y / sqrt(pow(this->direction.x, 2) + pow(this->direction.y, 2));
+
+	this->velocity = this->normailizeDir * movementSpeed;
 }
 
 void Boss::ShockwavesPattern()
@@ -53,6 +66,21 @@ void Boss::ShockwavesPattern()
 
 		this->shockwaves.push_back(make_unique<Shockwave>(this->window, 100, 50, this->shape.getPosition().x,
 			this->window->getSize().y - 25));
+	}
+}
+
+void Boss::UpdateShockwaves()
+{
+	for (int i = 0; i < shockwaves.size(); i++)
+	{
+		if (i % 2 == 0)
+			this->shockwaves.at(i)->Move();
+		else
+			this->shockwaves.at(i)->MoveInv();
+
+		if (this->shockwaves.at(i)->GetPos().x - this->shockwaves.at(i)->GetBounds().width / 2 <= 0 ||
+			this->shockwaves.at(i)->GetPos().x + this->shockwaves.at(i)->GetBounds().width / 2 >= this->window->getSize().x)
+			this->shockwaves.erase(this->shockwaves.begin() + i);
 	}
 }
 
@@ -80,8 +108,6 @@ void Boss::RayPattern()
 
 void Boss::UpdateRay()
 {
-	cout << timeBeetwenRay.asSeconds() << endl;
-
 	if (this->timeBeetwenRay.asSeconds() >= 6.f)
 	{
 		this->rayVector.clear();
@@ -92,21 +118,6 @@ void Boss::UpdateRay()
 	{
 		if (this->timeBeetwenRay.asSeconds() >= 4.f)
 			this->rayVector[i]->Update();
-	}
-}
-
-void Boss::UpdateShockwaves()
-{
-	for (int i = 0; i < shockwaves.size(); i++)
-	{
-		if (i % 2 == 0)
-			this->shockwaves.at(i)->Move();
-		else
-			this->shockwaves.at(i)->MoveInv();
-
-		if (this->shockwaves.at(i)->GetPos().x - this->shockwaves.at(i)->GetBounds().width / 2 <= 0 ||
-			this->shockwaves.at(i)->GetPos().x + this->shockwaves.at(i)->GetBounds().width / 2 >= this->window->getSize().x)
-			this->shockwaves.erase(this->shockwaves.begin() + i);
 	}
 }
 

@@ -18,12 +18,16 @@ class Boss :
 
     const Vector2f* playerPos;
 
+    Vector2f direction;
+    Vector2f normailizeDir;
+
 public:
     Boss(RenderWindow* _window, float _width, float _height, float _posX, float _posY, const Vector2f* _playerPos);
     ~Boss();
 
     virtual void Update();
     virtual void Move();
+    void Follow();
 
     void UpdateShockwaves();
     void ShockwavesPattern();
