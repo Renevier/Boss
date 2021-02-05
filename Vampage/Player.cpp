@@ -9,7 +9,7 @@ Player::Player(RenderWindow* _window, float _width, float _height, float _posX, 
 	:Entity(_window, _width, _height, _posX, _posY)
 {
 	this->shape.setFillColor(Color::Blue);
-	this->movementSpeed = 10.f;
+	this->movementSpeed = 0.1f;
 }
 
 Player::~Player()

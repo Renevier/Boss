@@ -15,6 +15,7 @@ Ray::~Ray()
 
 void Ray::Update()
 {
+	this->shape.setPosition //x = this.getGlobalBouynds().height / 2 y = player.pos.y
 	this->shape.setSize(Vector2f(this->shape.getSize().x, this->window->getSize().y));
 }
 

@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "Boss.h"
 
-Boss::Boss(RenderWindow* _window, float _width, float _height, float _posX, float _posY, Vector2f _playerPos)
-	:Entity(_window, _width, _height, _posX, _posY), rayOn(false)
+Boss::Boss(RenderWindow* _window, float _width, float _height, float _posX, float _posY, const Vector2f* _playerPos)
+	:Entity(_window, _width, _height, _posX, _posY)
 {
 	this->shape.setFillColor(Color::Red);
 	this->hp = 100;
@@ -44,7 +44,7 @@ void Boss::Move()
 
 void Boss::ShockwavesPattern()
 {
-	if (this->shockwaves.size() < 10)
+	if (this->shockwaves.size() == 0)
 	{
 		this->timeBeetwenWaves = clockWaves.restart();
 
@@ -62,16 +62,16 @@ void Boss::RayPattern()
 
 	if (rayVector.size() == 0)
 	{
-		this->rayVector.push_back(make_unique<Ray>(this->window, 100, 5,
+		this->rayVector.push_back(new Ray(this->window, 100, 5,
 			this->shape.getPosition().x + this->shape.getGlobalBounds().width + temp->GetBounds().width + 1,
 			this->window->getSize().y - 2.5));
 
-		this->rayVector.push_back(make_unique<Ray>(this->window, 100, 5,
+		this->rayVector.push_back(new Ray(this->window, 100, 5,
 			this->shape.getPosition().x - this->shape.getGlobalBounds().width - temp->GetBounds().width - 1,
 			this->window->getSize().y - 2.5));
 
-		this->rayVector.push_back(make_unique<Ray>(this->window, 100, 5,
-			this->playerPos.x,
+		this->rayVector.push_back(new Ray(this->window, 100, 5,
+			this->playerPos->x,
 			this->window->getSize().y - 2.5));
 	}
 

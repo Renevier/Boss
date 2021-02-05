@@ -8,7 +8,7 @@ class Boss :
     public Entity
 {
     vector<unique_ptr<Shockwave>> shockwaves;
-    vector<unique_ptr<Ray>> rayVector;
+    vector<Ray*> rayVector;
 
     Clock clockWaves;
     Time timeBeetwenWaves;
@@ -16,11 +16,10 @@ class Boss :
     Clock clockRay;
     Time timeBeetwenRay;
 
-    Vector2f playerPos;
-    bool rayOn;
+    const Vector2f* playerPos;
 
 public:
-    Boss(RenderWindow* _window, float _width, float _height, float _posX, float _posY, Vector2f _playerPos);
+    Boss(RenderWindow* _window, float _width, float _height, float _posX, float _posY, const Vector2f* _playerPos);
     ~Boss();
 
     virtual void Update();

@@ -3,7 +3,7 @@
 
 void Game::InitWindow()
 {
-	this->window = new RenderWindow(VideoMode(800, 600), "Boss");
+	this->window = new RenderWindow(VideoMode(1900, 1080), "Boss");
 	this->window->setFramerateLimit(144);
 
 }
@@ -15,7 +15,7 @@ void Game::InitPlayer()
 
 void Game::InitBoss()
 {
-	this->boss = make_unique<Boss>(this->window, 100, 100, this->window->getSize().x / 2, this->window->getSize().y - 50, this->player->GetPos());
+	this->boss = make_unique<Boss>(this->window, 100, 100, this->window->getSize().x / 2, this->window->getSize().y - 50, &this->player->GetPos());
 }
 
 Game::Game()
