@@ -18,6 +18,5 @@ void Shockwave::Move()
 void Shockwave::MoveInv()
 {
 	this->velocity -= Vector2f(.2f, 0.f);
-
-	Entity::Move();
+	this->shape.move(velocity);
 }

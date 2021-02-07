@@ -50,7 +50,7 @@ void Boss::Follow()
 	this->direction = *this->playerPos - this->shape.getPosition();
 
 	this->normailizeDir.x = this->direction.x / sqrt(pow(this->direction.x, 2) + pow(this->direction.y, 2));
-	this->normailizeDir.y = 0; // this->direction.y / sqrt(pow(this->direction.x, 2) + pow(this->direction.y, 2));
+	this->normailizeDir.y = 0;
 
 	this->velocity = this->normailizeDir * movementSpeed;
 }
